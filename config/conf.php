@@ -3,9 +3,9 @@
 /**
 * Contains DB connexion info
 */
-class Conf
+class conf
 {
-	
+	static $debug = 1;
 	static $databases = array(
 
 	'default' => array(
@@ -19,8 +19,4 @@ class Conf
 
 	);
 
-	function __construct()
-	{
-		# code...
-	}
 }

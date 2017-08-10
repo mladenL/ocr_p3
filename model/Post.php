@@ -8,6 +8,6 @@ class Post extends Model
 	
 	function __construct()
 	{
-		# code...
+		
 	}
 }
