@@ -6,10 +6,10 @@
 class Controller
 {
 
-	public $request;
-	private $vars = array();
-	public $layout = 'default';
-	private $rendered = false;	// was the view rendered already ? default = no
+	public $request;				// contains the request object
+	private $vars = array();		// array containing URL parameters
+	public $layout = 'default';		// name of layout used for the website
+	private $rendered = false;		// was the view rendered already ? default = no
 
 	function __construct($request) {
 		$this->request = $request;
@@ -38,6 +38,17 @@ class Controller
 		$this->vars[$key] = $value;	
 		}
 
+	}
+
+	/**
+	 * Allows to load a model 
+	 */
+	public function loadModel($name) {
+		$file = ROOT.DS.'model'.DS.$name.'.php';
+		require_once($file);
+		if(!isset($this->$name)) {
+			$this->$name = new $name();
+		}
 	}
 
 }

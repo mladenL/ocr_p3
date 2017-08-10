@@ -6,13 +6,10 @@
 
 class PagesController extends Controller
 {
-	function index() {
+	function view() {
 
-		$this->set(array(
-			'phrase' => 'Salut, ',
-			'nom' => 'Mladen'
-		));
-		
-		$this->render('index');
+		$this->loadModel('Post');
+		$this->loadModel('Post');
+
 	}
 }
